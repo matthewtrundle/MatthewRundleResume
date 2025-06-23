@@ -9,62 +9,62 @@ const experiences = [
     logo: Building2,
     role: "Senior Manager, Supply & Commercial Analytics",
     duration: "2021 - January 2025",
-    location: "Seattle, WA",
+    location: "Austin, TX",
     highlights: [
       {
         icon: DollarSign,
         metric: "$100M+",
-        description: "Incremental GMV from 20% supply growth"
+        description: "Incremental GMV influenced through analytics"
       },
       {
         icon: Users,
         metric: "100+",
-        description: "Cross-functional team members led"
+        description: "Stakeholders across Product, Engineering, Marketing"
       },
       {
         icon: TrendingUp,
         metric: "12%",
-        description: "Conversion uplift from ML models"
+        description: "Listing conversion improvement"
       }
     ],
     achievements: [
-      "Led global initiative adding 400K properties through AI-powered market scoring",
-      "Built ML platform processing 570K+ listings with real-time recommendations",
-      "Established C-suite analytics dashboard influencing $500M+ in strategic decisions",
-      "Reduced manual reporting by 40% through automation and self-service tools"
+      "Spearheaded analytics strategy for 20% YoY supply growth initiative, directly influencing $100M+ incremental GMV through data-driven market prioritization",
+      "Architected and deployed ML-powered listing quality scoring system processing 570K+ properties daily, improving conversion rates by 12%",
+      "Established executive analytics function serving C-suite with weekly strategic insights, directly informing $500M+ in capital allocation decisions",
+      "Transformed analytics operations by implementing automated pipelines and self-service tools, reducing reporting cycle time from days to hours"
     ],
-    technologies: ["Python", "TensorFlow", "AWS SageMaker", "Snowflake", "Tableau"]
+    technologies: ["Python", "SQL", "Tableau", "Databricks", "Executive Presentations"]
   },
   {
     company: "Expedia Group (Vrbo)",
     logo: Building2,
     role: "Manager, Analytics & Data Science",
     duration: "2019 - 2021",
-    location: "Seattle, WA",
+    location: "Austin, TX",
     highlights: [
       {
         icon: Award,
         metric: "First",
-        description: "ML Center of Excellence"
+        description: "Analytics Center of Excellence at Vrbo"
       },
       {
         icon: Users,
-        metric: "6",
-        description: "Direct reports mentored"
+        metric: "6→3",
+        description: "Team members developed & promoted"
       },
       {
         icon: TrendingUp,
         metric: "35%",
-        description: "Faster time to first booking"
+        description: "Reduction in time to first booking"
       }
     ],
     achievements: [
-      "Designed segmentation frameworks for targeted market expansion",
-      "Built opportunity models with measurable commercial ROI",
-      "Established data science best practices across organization",
-      "Launched cross-functional AI literacy program"
+      "Pioneered advanced market segmentation framework analyzing 50+ variables, identifying untapped markets representing $50M+ revenue opportunity",
+      "Developed ensemble predictive models (XGBoost + Neural Networks) achieving 85% accuracy in identifying high-value property acquisition targets",
+      "Founded and scaled Analytics Center of Excellence, establishing Python/SQL best practices adopted by 30+ analysts across the organization",
+      "Built and mentored high-performing team of 6 data scientists, with 3 promoted to senior roles within 18 months"
     ],
-    technologies: ["Python", "scikit-learn", "XGBoost", "SQL", "dbt"]
+    technologies: ["Python", "SQL", "Tableau", "Databricks", "Statistical Analysis"]
   }
 ];
 

@@ -12,9 +12,9 @@ const impactStories = [
     description: "Led cross-functional initiative to strategically grow global supply by 20%, adding 400K properties",
     details: [
       "Developed AI-powered market opportunity scoring across 50+ factors",
-      "Optimized $15M acquisition budget with 7:1 ROI",
-      "Scaled from 2 pilot markets to global rollout in 12 months",
-      "Influenced $50M additional AI investment"
+      "Improved partner acquisition efficiency by 40% through data-driven targeting",
+      "Standardized analytics framework adopted by 5 regional teams globally",
+      "Secured executive sponsorship for expanded analytics capabilities and headcount"
     ],
     color: "blue"
   },
@@ -26,9 +26,9 @@ const impactStories = [
     description: "Built ML platform analyzing 570K+ listings to improve partner onboarding and conversion",
     details: [
       "Reduced time-to-first-booking by 35% (45 → 29 days)",
-      "Achieved 0.87 AUC with ensemble model approach",
-      "Saved $3M annually in support costs",
-      "Increased partner NPS by 22 points"
+      "Processed 10K+ new listings daily with real-time scoring and recommendations",
+      "Enabled 60% of partners to achieve 'booking ready' status within first week",
+      "Automated quality assessments that previously required manual review"
     ],
     color: "green"
   },
@@ -41,8 +41,8 @@ const impactStories = [
     details: [
       "Reduced executive decision time by 80%",
       "Standardized KPIs across organization",
-      "Enabled 3 major strategic pivots",
-      "100% C-suite adoption within 30 days"
+      "Delivered weekly insights supporting quarterly business reviews",
+      "Integrated data from 30+ disparate sources into unified view"
     ],
     color: "purple"
   }

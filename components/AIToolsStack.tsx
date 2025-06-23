@@ -23,9 +23,10 @@ const toolCategories = [
     tools: [
       "Claude API (Anthropic)",
       "GPT-4 API (OpenAI)",
-      "LangChain",
-      "LlamaIndex",
-      "Hugging Face"
+      "OpenAI Assistants API",
+      "Anthropic Messages API",
+      "Helius API (Solana)",
+      "Birdeye API (DeFi Analytics)"
     ]
   },
   {
@@ -41,26 +42,15 @@ const toolCategories = [
     ]
   },
   {
-    title: "Backend & Infrastructure",
-    icon: Database,
+    title: "Backend & Deployment",
+    icon: Cloud,
     color: "from-orange-500 to-red-500",
     tools: [
-      "Supabase",
+      "Supabase / PostgreSQL",
+      "Vercel / AWS",
+      "Docker / GitHub Actions",
       "Prisma ORM",
-      "PostgreSQL",
-      "Resend (Email)",
-      "NextAuth"
-    ]
-  },
-  {
-    title: "Deployment & DevOps",
-    icon: Cloud,
-    color: "from-indigo-500 to-purple-500",
-    tools: [
-      "Vercel",
-      "GitHub Actions",
-      "Docker",
-      "AWS Services",
+      "NextAuth / Resend",
       "Cloudflare"
     ]
   },
@@ -75,6 +65,19 @@ const toolCategories = [
       "Fine-tuning",
       "Multi-Agent Systems"
     ]
+  },
+  {
+    title: "Web3 & Blockchain",
+    icon: Zap,
+    color: "from-purple-500 to-indigo-500",
+    tools: [
+      "Smart Contract Development",
+      "Solidity",
+      "Web3.js / Ethers.js",
+      "Hardhat",
+      "Solana Web3.js",
+      "IPFS Integration"
+    ]
   }
 ];
 
@@ -83,34 +86,34 @@ const aiCapabilities = [
     category: "AI Implementation Skills",
     skills: [
       "Prompt Engineering & Optimization",
-      "Context Window Management",
-      "Token Optimization",
+      "AI-Powered Data Analysis",
+      "Natural Language to SQL",
       "Chain-of-Thought Prompting",
-      "Few-Shot Learning",
-      "RAG Implementation",
-      "Vector Embeddings",
-      "Semantic Search",
-      "Agent Orchestration",
-      "Memory Management",
+      "Multi-Agent Orchestration",
+      "Real-time AI Integration",
+      "Executive Dashboard Creation",
+      "AI Product Development",
       "Tool Use & Function Calling",
-      "Streaming Responses"
+      "Streaming Responses",
+      "AI Team Leadership",
+      "Cross-functional AI Strategy"
     ]
   },
   {
-    category: "Production AI Patterns",
+    category: "Enterprise AI Leadership",
     skills: [
-      "Error Handling & Fallbacks",
-      "Rate Limiting & Caching",
-      "Cost Optimization",
-      "Response Validation",
-      "Security & Safety Filters",
-      "Multi-Model Strategies",
-      "A/B Testing AI Features",
+      "AI Strategy Development",
+      "Executive Stakeholder Management",
+      "AI ROI Measurement",
+      "Team Building & Mentorship",
+      "Change Management",
+      "AI Adoption Frameworks",
+      "A/B Testing & Experimentation",
       "Performance Monitoring",
-      "User Feedback Loops",
-      "Continuous Improvement",
+      "Budget & Resource Planning",
+      "Risk Management",
       "Compliance & Ethics",
-      "Scalability Planning"
+      "Vendor Evaluation"
     ]
   }
 ];

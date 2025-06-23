@@ -36,7 +36,7 @@ export const executiveCaseStudies: ExecutiveCaseStudy[] = [
     businessContext: {
       challenge: "Vrbo faced declining market share against competitors, requiring strategic supply expansion while maintaining quality standards and optimizing acquisition costs.",
       stakeholders: ["CEO", "CFO", "VP Product", "VP Engineering", "Regional GMs"],
-      budget: "$15M acquisition budget + $78K operational",
+      budget: "Multi-million acquisition budget + operational expenses",
       timeline: "12 months (Q1 2023 - Q1 2024)"
     },
     solution: {
@@ -62,7 +62,7 @@ export const executiveCaseStudies: ExecutiveCaseStudy[] = [
       financial: [
         { metric: "Incremental GMV", value: "$100M+", verification: "Finance-validated using holdout markets" },
         { metric: "Acquisition Efficiency", value: "40% improvement", verification: "Cost per quality listing reduced" },
-        { metric: "ROI", value: "7:1", verification: "A/B test with control markets" }
+        { metric: "Partner Acquisition Cost", value: "40% reduction", verification: "Finance-validated metrics" }
       ],
       operational: [
         { metric: "Time to Market", improvement: "60% faster property onboarding" },
@@ -71,7 +71,7 @@ export const executiveCaseStudies: ExecutiveCaseStudy[] = [
       strategic: [
         "Established Vrbo as market leader in 3 new geographic segments",
         "Created reusable AI platform for future growth initiatives",
-        "Influenced $50M additional investment in AI capabilities"
+        "Secured executive commitment for expanded AI capabilities and team growth"
       ]
     },
     lessonsLearned: [

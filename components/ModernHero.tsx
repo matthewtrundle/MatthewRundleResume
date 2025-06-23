@@ -33,11 +33,14 @@ export default function ModernHero() {
               <div className="mb-8">
                 <p className="text-xl text-gray-700 leading-relaxed mb-4">
                   Senior leader at Expedia Group who drove <span className="font-semibold text-gray-900">$200M+ in analytics transformation</span>. 
-                  Evolved from using AI for insights to <span className="font-semibold text-gray-900">building AI tools and agents</span> over 12+ months.
+                  Currently on a <span className="font-semibold text-gray-900">strategic sabbatical</span> mastering hands-on AI implementation.
                 </p>
-                <p className="text-lg text-gray-600">
-                  Led <span className="font-semibold">6 direct reports</span> while collaborating with 
-                  <span className="font-semibold"> 100+ cross-functional partners</span> globally
+                <p className="text-lg text-gray-600 mb-3">
+                  Built <span className="font-semibold">5+ production AI systems</span> while preparing to lead 
+                  enterprise AI transformation at scale.
+                </p>
+                <p className="text-sm text-blue-600 font-medium">
+                  ✨ Turning career transition into competitive advantage through hands-on AI building
                 </p>
               </div>
 

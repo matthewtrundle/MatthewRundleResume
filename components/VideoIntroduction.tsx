@@ -112,13 +112,14 @@ export default function VideoIntroduction() {
             viewport={{ once: true }}
             className="mt-8 p-6 bg-blue-50 rounded-lg"
           >
-            <h4 className="font-semibold text-gray-900 mb-2">Your Video Script - "The Strategic Pivot"</h4>
+            <h4 className="font-semibold text-gray-900 mb-2">Your Video Script - "The Bridge Builder"</h4>
             <ol className="space-y-3 text-sm text-gray-700">
-              <li><strong>0:00-0:15</strong> - "At Expedia Group, I've driven $200 million in analytics transformation while leading teams across 5 global markets. But my real journey began when I started using AI at Vrbo to generate insights for executive strategy."</li>
-              <li><strong>0:15-0:35</strong> - "Over the past 12 months, I've evolved from using AI to building AI. I now create the tools and agents that enable others to find insights and make decisions. From enterprise data assistants to multi-agent systems, I've built 5+ production AI solutions."</li>
-              <li><strong>0:35-0:55</strong> - "What makes me different? I'm a senior leader who can architect and implement AI solutions. I've led 6 direct reports and collaborated with 100+ cross-functional partners. I understand both the boardroom and the codebase."</li>
-              <li><strong>0:55-1:15</strong> - "Organizations need leaders who've walked the AI journey—from adoption to implementation. Someone who can translate business needs into AI solutions and actually build them. That's the unique value I bring."</li>
-              <li><strong>1:15-1:30</strong> - "If you're looking for an AI leader who combines strategic thinking with hands-on building, let's explore how I can help your organization master AI implementation."</li>
+              <li><strong>0:00-0:10</strong> - "Hi, I'm Matt. After 5+ years leading analytics and data science teams, I watched a pattern: brilliant analysts spending 20 hours building reports that executives spent 20 seconds reviewing. I knew there had to be a better way."</li>
+              <li><strong>0:10-0:30</strong> - "At Expedia Group, I led analytics transformation worth $200 million, built predictive models that drove supply growth, and managed teams across 5 global markets. But my real breakthrough came when I started using AI to democratize these insights - suddenly, everyone could think like a data scientist."</li>
+              <li><strong>0:30-0:50</strong> - "That sparked something. Since then, I've built 5 production AI systems that put analytical power directly in users' hands. My favorite? 'Agents Being Salty' - where AI agents literally debate their way to better decisions. It's unconventional, but that's the point. Real innovation happens when you combine analytical rigor with creative implementation."</li>
+              <li><strong>0:50-1:10</strong> - "Here's what 6 years of data science leadership taught me: Most AI fails because of the gap between technical teams building and business teams using. I live in that gap. I've presented to C-suites, built ML models, managed P&Ls, and shipped production code. I translate executive vision into working systems."</li>
+              <li><strong>1:10-1:25</strong> - "I'm not claiming to be a PhD researcher. I'm the leader who's been in the trenches - who's built segmentation models, fraud detection systems, and demand forecasts. Who knows that the best AI solution is the one that actually gets used. Who gets teams excited about AI augmentation, not fearful of replacement."</li>
+              <li><strong>1:25-1:30</strong> - "If you need someone to bridge analytics, data science, and AI in your organization - someone who's done it before - let's talk. I'm ready to help you turn AI potential into measurable impact."</li>
             </ol>
           </motion.div>
         </motion.div>

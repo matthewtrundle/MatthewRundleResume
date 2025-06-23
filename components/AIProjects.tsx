@@ -14,6 +14,48 @@ const aiProjects = [
     link: "https://enterprise-data-assistant-6ima.vercel.app/"
   },
   {
+    title: "Multi-Agent System: Agents Being Salty",
+    icon: Brain,
+    description: "5 autonomous AI agents with distinct personalities that argue their way to consensus. Real-time deliberation framework with transparent reasoning, featuring agents like Alex (overthinking orchestrator) and Chad (Web3 believer). 2-file codebase demonstrating agentic transparency.",
+    technologies: ["Claude API", "Next.js", "Real-time Debate", "Prompt Engineering"],
+    impact: "Live Demo System",
+    category: "Multi-Agent AI",
+    link: "https://agents-being-salty1.vercel.app/demo"
+  },
+  {
+    title: "AI-Powered E-Learning Platform",
+    icon: Zap,
+    description: "Built comprehensive e-learning management system with AI-powered content generation for psychology practice. Features automated course creation, personalized learning paths, and intelligent assessment generation",
+    technologies: ["Next.js", "React", "Claude API", "LMS Integration"],
+    impact: "Live Business Site",
+    category: "EdTech AI",
+    link: "https://www.bloompsychologynorthaustin.com/"
+  },
+  {
+    title: "Google Ads AI Optimization",
+    icon: BarChart3,
+    description: "Building ML-powered system for real-time bid optimization and campaign performance. Uses predictive models to adjust bidding strategies based on conversion patterns and market dynamics",
+    technologies: ["Python", "TensorFlow", "Google Ads API", "Real-time ML"],
+    impact: "In Development",
+    category: "ML Optimization"
+  },
+  {
+    title: "Blockchain Gaming Platform",
+    icon: Sparkles,
+    description: "Creating Web3 gaming experience with on-chain assets, smart contracts, and play-to-earn mechanics. Integrates AI for dynamic gameplay and automated market making",
+    technologies: ["Solidity", "Next.js", "Web3.js", "AI Integration"],
+    impact: "In Development",
+    category: "Web3 Gaming"
+  },
+  {
+    title: "Automated Trading Bot",
+    icon: Zap,
+    description: "Developing fully automated trading system with ML-driven market analysis and execution. Features risk management, backtesting, and real-time decision making",
+    technologies: ["Python", "ML Models", "Trading APIs", "Web3"],
+    impact: "In Development",
+    category: "Financial AI"
+  },
+  {
     title: "AI-Powered Social Media Platform",
     icon: MessageSquare,
     description: "Built AI content generation and scheduling platform for real estate professionals to establish thought leadership",
@@ -21,23 +63,6 @@ const aiProjects = [
     impact: "Automated Content Creation",
     category: "Content AI",
     link: "https://hintz-pa.vercel.app/"
-  },
-  {
-    title: "Multi-Agent Ticketing System",
-    icon: Brain,
-    description: "Developing advanced multi-agent architecture for intelligent ticket routing, resolution, and knowledge management",
-    technologies: ["LangChain", "Claude 3", "Python", "FastAPI"],
-    impact: "In Development",
-    category: "Multi-Agent AI"
-  },
-  {
-    title: "Full-Stack Business Solutions",
-    icon: Zap,
-    description: "Delivered complete web presence for psychology practice, demonstrating ability to ship end-to-end solutions",
-    technologies: ["Next.js", "React", "TypeScript", "SEO"],
-    impact: "Live Business Site",
-    category: "Full-Stack",
-    link: "https://www.bloompsychologynorthaustin.com/"
   }
 ];
 

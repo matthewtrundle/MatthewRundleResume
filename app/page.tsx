@@ -8,7 +8,6 @@ import ModernExperience from "@/components/ModernExperience";
 import ModernImpact from "@/components/ModernImpact";
 import AIProjects from "@/components/AIProjects";
 import AIToolsStack from "@/components/AIToolsStack";
-import ModernTestimonials from "@/components/ModernTestimonials";
 import ModernContact from "@/components/ModernContact";
 import ModernFooter from "@/components/ModernFooter";
 
@@ -18,13 +17,12 @@ export default function Home() {
       <ModernNavigation />
       <main>
         <ModernHero />
-        <VideoIntroduction />
+        {/* <VideoIntroduction /> */}
         <ModernExecutiveSummary />
         <ModernExperience />
         <ModernImpact />
         <AIProjects />
         <AIToolsStack />
-        <ModernTestimonials />
         <ModernContact />
       </main>
       <ModernFooter />

@@ -37,7 +37,7 @@ export default function ModernContact() {
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <a
-                href="mailto:matthew.rundle@gmail.com"
+                href="mailto:matthewtrundle@gmail.com"
                 className="btn-primary flex items-center gap-2"
               >
                 <Mail className="w-5 h-5" />
@@ -69,7 +69,7 @@ export default function ModernContact() {
               <h4 className="font-semibold text-gray-900 mb-1">Email</h4>
               <p className="text-gray-600 text-sm mb-3">For opportunities & inquiries</p>
               <span className="text-blue-600 text-sm group-hover:underline">
-                matthew.rundle@gmail.com
+                matthewtrundle@gmail.com
               </span>
             </motion.a>
 
@@ -91,7 +91,7 @@ export default function ModernContact() {
             </motion.a>
 
             <motion.a
-              href="https://www.linkedin.com/in/matthewtrundle/"
+              href="https://calendly.com/matthewtrundle/30min"
               target="_blank"
               rel="noopener noreferrer"
               initial={{ opacity: 0, y: 20 }}
@@ -104,17 +104,48 @@ export default function ModernContact() {
               <h4 className="font-semibold text-gray-900 mb-1">Schedule</h4>
               <p className="text-gray-600 text-sm mb-3">Let's discuss opportunities</p>
               <span className="text-blue-600 text-sm group-hover:underline">
-                Book via LinkedIn
+                Book 30min Call
               </span>
             </motion.a>
           </div>
+
+          {/* GitHub Stats */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mt-8 p-6 bg-gray-50 rounded-lg text-center"
+          >
+            <h4 className="font-semibold text-gray-900 mb-3">View My Code & Infrastructure</h4>
+            <div className="flex flex-wrap gap-4 justify-center mb-4">
+              <a
+                href="https://github.com/matthewtrundle"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors"
+              >
+                <Github className="w-5 h-5" />
+                GitHub Profile
+              </a>
+              <div className="flex items-center gap-2 text-sm text-gray-600">
+                <span className="font-semibold">5+ AI Projects</span>
+                <span>•</span>
+                <span className="font-semibold">Python, TypeScript, Solidity</span>
+                <span>•</span>
+                <span className="font-semibold">Daily Commits</span>
+              </div>
+            </div>
+            <p className="text-sm text-gray-600">
+              Production deployments on Vercel, Supabase, and AWS. Full-stack infrastructure with CI/CD pipelines.
+            </p>
+          </motion.div>
 
           {/* Additional Links */}
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="flex justify-center gap-6 mt-8"
+            className="flex justify-center gap-6 mt-6"
           >
             <a
               href="https://github.com/matthewtrundle"

@@ -24,7 +24,7 @@ const highlights = [
 const competencies = [
   "AI Strategy & Implementation",
   "Prompt Engineering",
-  "RAG & Vector Databases",
+  "Data Analytics & Visualization",
   "Multi-Agent Systems",
   "Executive Stakeholder Management", 
   "P&L Ownership",
