@@ -22,10 +22,10 @@ export default function ModernHero() {
                   Matthew Rundle
                 </h1>
                 <h2 className="text-2xl md:text-3xl text-gray-700 mb-2">
-                  AI Implementation Leader
+                  Data Science & AI Leader
                 </h2>
                 <p className="text-lg text-gray-600">
-                  Bridging Enterprise Strategy & Hands-on AI Development
+                  Enterprise Analytics Leadership + Hands-on AI Implementation
                 </p>
               </div>
 

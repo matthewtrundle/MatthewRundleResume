@@ -47,16 +47,17 @@ export default function ModernExecutiveSummary() {
               <h2 className="section-title">Executive Summary</h2>
               <div className="prose prose-lg text-gray-700 max-w-none">
                 <p className="mb-6">
-                  As a senior leader at Expedia Group, I've driven $200M+ in analytics transformation 
-                  while leading 6 direct reports and collaborating with 100+ cross-functional partners. 
-                  My AI journey began at Vrbo using AI for analytics and insights to support executive 
-                  strategy—but I saw the bigger opportunity.
+                  Data science executive with rare combination of enterprise leadership ($200M+ impact 
+                  at Expedia Group) and recent hands-on AI building experience. Developed 5+ production 
+                  systems including NLP applications, multi-agent architectures, and ML platforms. 
+                  Proven ability to both strategize and implement data science solutions.
                 </p>
                 <p className="mb-6">
-                  Over the past 12+ months, I've evolved from using AI to building AI. I now create 
-                  the tools and agents that enable others to find insights and drive decisions. From 
-                  enterprise data assistants to multi-agent systems, I combine senior leadership 
-                  experience with hands-on technical implementation—a rare and valuable combination.
+                  As a senior leader at Expedia Group, I've driven analytics transformation while 
+                  managing teams of 6-12 data scientists and collaborating with 100+ cross-functional 
+                  partners. Over the past 12+ months, I've enhanced my leadership experience with 
+                  hands-on AI implementation, creating production systems that democratize data insights 
+                  and enable intelligent decision-making at scale.
                 </p>
               </div>
 
@@ -114,10 +115,10 @@ export default function ModernExecutiveSummary() {
               <div className="mt-8 pt-6 border-t border-gray-200">
                 <h4 className="font-semibold text-gray-900 mb-2">Target Roles</h4>
                 <p className="text-gray-600 mb-2">
-                  VP of AI Strategy • Head of Applied AI • AI Implementation Leader
+                  Head of Data Science • VP of Analytics & AI • Director of Data Science • Senior Manager, ML/AI
                 </p>
                 <p className="text-sm text-gray-500">
-                  Organizations seeking leaders who can both strategize and build AI solutions
+                  Organizations seeking data science leaders who combine strategic vision with technical implementation
                 </p>
               </div>
             </motion.div>
