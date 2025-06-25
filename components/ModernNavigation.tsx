@@ -88,7 +88,7 @@ export default function ModernNavigation() {
               <Linkedin className="w-5 h-5" />
             </a>
             <a
-              href="mailto:matthew.rundle@gmail.com"
+              href="mailto:matthewtrundle@gmail.com"
               className="btn-primary text-sm px-4 py-2"
             >
               Get in Touch
