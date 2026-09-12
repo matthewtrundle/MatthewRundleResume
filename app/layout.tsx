@@ -1,30 +1,17 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
-
 export const metadata: Metadata = {
-  title: "Matthew Rundle - Strategic AI Architect",
-  description: "Executive AI leader with 500+ hours hands-on experience building transformative AI solutions. Proven track record of $200M+ commercial impact through ML-powered analytics.",
-  keywords: ["AI Leadership", "Machine Learning", "Analytics", "Data Science", "Strategic AI", "Matthew Rundle"],
+  title: "Matthew Rundle | Applied AI and Data Leader",
+  description: "Applied AI and data leader building production systems across manufacturing, customer communications, operations and enterprise analytics.",
+  keywords: ["Applied AI", "AI Leadership", "Agentic Systems", "Data Leadership", "AI Product", "Austin"],
   openGraph: {
-    title: "Matthew Rundle - Strategic AI Architect",
-    description: "Executive AI leader driving $200M+ impact through innovative ML solutions",
+    title: "Matthew Rundle | Applied AI and Data Leader",
+    description: "AI systems that move from strategy into real operations.",
     type: "website",
   },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="en">
-      <body className={`${inter.className} bg-gray-50 text-gray-900`}>
-        {children}
-      </body>
-    </html>
-  );
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  return <html lang="en"><body>{children}</body></html>;
 }
