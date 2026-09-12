@@ -3,23 +3,29 @@ import { ArrowDownRight, ArrowUpRight, Bot, Boxes, Building2, Database, Github, 
 
 const projects = [
   {
-    number: "01", title: "CoreLinq", subtitle: "Agentic communications platform", status: "Private source · Production system",
-    description: "A multi-tenant operating layer for customer communication. CoreLinq coordinates AI-assisted email, voice and SMS outreach, qualifies leads, books appointments, escalates edge cases and verifies outcomes in one workflow.",
-    capabilities: ["Cross-channel campaign orchestration", "AI inbox and reply handling", "Voice agents and human escalation", "Scheduling, analytics and outcome verification"],
-    stack: "Next.js · TypeScript · Supabase · Inngest · Retell · Twilio", icon: Radio, accent: "orange",
+    number: "01", title: "Manufacturing Execution System", subtitle: "Western Magnetics end-to-end production platform", status: "Built from the ground up · Running production",
+    description: "The operating system currently running Western Magnetics' end-to-end manufacturing processing for U.S. drone motors. I designed and built the system from zero, translating the factory lifecycle into one connected execution layer.",
+    capabilities: ["End-to-end manufacturing processing", "Procurement and production workflows", "Quality control and full traceability", "Finance, factory operations and AI agents"],
+    stack: "System architecture · MES · ERP integration · Operational data · AI agents", icon: Building2, accent: "orange",
   },
   {
-    number: "02", title: "CoreLinq Scribe", subtitle: "AI clinical documentation and practice operations", status: "Live interactive demo",
+    number: "02", title: "CoreLinq", subtitle: "Agentic communications platform", status: "Private source · Production system",
+    description: "A multi-tenant operating layer for customer communication. CoreLinq coordinates AI-assisted email, voice and SMS outreach, qualifies leads, books appointments, escalates edge cases and verifies outcomes in one workflow.",
+    capabilities: ["Cross-channel campaign orchestration", "AI inbox and reply handling", "Voice agents and human escalation", "Scheduling, analytics and outcome verification"],
+    stack: "Next.js · TypeScript · Supabase · Inngest · Retell · Twilio", icon: Radio, accent: "blue",
+  },
+  {
+    number: "03", title: "CoreLinq Scribe", subtitle: "AI clinical documentation and practice operations", status: "Live interactive demo",
     description: "An end-to-end product for turning clinical activity into structured operational work. The demo includes encounters, AI-extracted SOAP notes, claims, pre-authorizations, inventory and workflow tracking in a populated practice.",
     capabilities: ["AI-assisted encounter documentation", "Claims and pre-authorization workflows", "Inventory and operational tracking", "Browser and mobile product surfaces"],
     stack: "Next.js · React · Supabase · Anthropic · OpenAI · Capacitor", icon: Workflow, accent: "green",
     link: "https://scribe-two-tau.vercel.app/demo", linkLabel: "Open the 60-second demo",
   },
   {
-    number: "03", title: "Domain Labs", subtitle: "Custom AI and SaaS systems for small businesses", status: "Founder-led product studio",
+    number: "04", title: "Domain Labs", subtitle: "Custom AI and SaaS systems for small businesses", status: "Founder-led product studio",
     description: "A practical build studio for companies that had outgrown generic site builders and disconnected point solutions. Projects combined custom product design, operating workflows, automation and customer-facing software.",
     capabilities: ["Custom SaaS replacing fragmented tools", "Workflow and inventory applications", "Agent-enabled sales and communications", "Product strategy through production delivery"],
-    stack: "Product strategy · AI systems · Full-stack delivery · Automation", icon: Boxes, accent: "blue",
+    stack: "Product strategy · AI systems · Full-stack delivery · Automation", icon: Boxes, accent: "paper",
   },
 ];
 
@@ -30,7 +36,7 @@ const experiments = [
 ];
 
 const experience = [
-  { years: "2026 — PRESENT", company: "Westmag", role: "AI Systems and AI-Native Manufacturing Software", text: "Leading development of an AI-native operating system for U.S. drone motor manufacturing across ERP, MES, procurement, production, quality, traceability and factory operations." },
+  { years: "2026 — PRESENT", company: "Western Magnetics / Westmag", role: "AI Systems and AI-Native Manufacturing Software", text: "Built from the ground up the manufacturing execution system currently running end-to-end production processing for U.S. drone motors, connecting ERP, operational data and agent workflows across the factory lifecycle." },
   { years: "2025", company: "Domain Labs", role: "Founder, AI and SaaS Solutions", text: "Partnered with small businesses to design and ship custom SaaS, workflow products and agent-driven communications systems." },
   { years: "2019 — 2025", company: "Expedia Group / Vrbo", role: "Analytics and Data Science Leadership", text: "Built and led a six-person data science team; established executive analytics used in major capital allocation decisions; and delivered systems spanning market prioritization, listing quality and commercial performance." },
 ];
@@ -48,14 +54,14 @@ export default function Home() {
         <div className="hero-copy">
           <p className="eyebrow"><span /> APPLIED AI · DATA · PRODUCT</p>
           <h1>I build AI systems that do the work.</h1>
-          <p className="hero-lede">I turn ambiguous operating problems into products, agent workflows and decision systems — from factory software to customer communications and enterprise analytics.</p>
+          <p className="hero-lede">I turn ambiguous operating problems into production systems — including the end-to-end manufacturing execution platform currently running Western Magnetics.</p>
           <div className="hero-actions">
             <a className="button primary" href="#work">See selected work <ArrowDownRight size={18} /></a>
             <a className="button ghost" href="/Matthew_Rundle_Applied_AI_Resume.pdf" download>Download résumé</a>
           </div>
           <div className="hero-meta" aria-label="Career summary">
             <div><strong>12+</strong><span>years in data and technology</span></div>
-            <div><strong>3</strong><span>AI systems in production</span></div>
+            <div><strong>MES</strong><span>running end-to-end production</span></div>
             <div><strong>Austin</strong><span>Texas</span></div>
           </div>
         </div>
@@ -101,7 +107,7 @@ export default function Home() {
 
       <section className="experience-section" id="experience">
         <div className="shell experience-grid">
-          <div className="experience-aside"><p className="section-kicker">EXPERIENCE</p><h2>Enterprise scale. Builder speed.</h2><p>Most recently focused on AI-native manufacturing, after building products through Domain Labs and leading data science and analytics at Vrbo.</p></div>
+          <div className="experience-aside"><p className="section-kicker">EXPERIENCE</p><h2>Enterprise scale. Builder speed.</h2><p>Most recently built the manufacturing execution system running Western Magnetics' end-to-end production, after building products through Domain Labs and leading data science and analytics at Vrbo.</p></div>
           <div className="timeline">
             {experience.map((item) => <article key={`${item.company}-${item.years}`}><p className="years">{item.years}</p><div><h3>{item.company}</h3><h4>{item.role}</h4><p>{item.text}</p></div></article>)}
             <a className="text-link" href="https://www.linkedin.com/in/matthewtrundle/" target="_blank" rel="noreferrer">Full history on LinkedIn <ArrowUpRight size={17} /></a>
