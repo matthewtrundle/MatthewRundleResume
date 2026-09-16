@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Matthew Rundle | Applied AI and Data Leader",
-  description: "Applied AI and data leader building production systems across manufacturing, customer communications, operations and enterprise analytics.",
+  title: "Matthew Rundle | Manufacturing Systems & Applied AI",
+  description: "Systems builder who built the manufacturing execution system running Western Magnetics’ end-to-end production process, plus agentic SaaS products and data science leadership at Expedia Group.",
   keywords: ["Applied AI", "AI Leadership", "Agentic Systems", "Data Leadership", "AI Product", "Austin"],
   openGraph: {
-    title: "Matthew Rundle | Applied AI and Data Leader",
-    description: "AI systems that move from strategy into real operations.",
+    title: "Matthew Rundle | Manufacturing Systems & Applied AI",
+    description: "Software that runs factories, with applied AI where it earns its place.",
     type: "website",
   },
 };
