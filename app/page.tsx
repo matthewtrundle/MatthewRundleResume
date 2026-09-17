@@ -84,7 +84,7 @@ export default function Home() {
                     <div className="project-title-row"><div><p className="project-status">{project.company} · {project.status}</p><h3>{project.title}</h3></div><div className="project-icon"><Icon size={27} /></div></div>
                     <p className="project-description">{project.description}</p>
                     <div className="scope-strip" aria-label="Product workflow">{project.scope.map((step) => <span key={step}>{step}</span>)}</div>
-                    <details className="case-study">
+                    <details className="case-study" open>
                       <summary>Read the case study <span aria-hidden="true">+</span></summary>
                       <dl>
                         <div><dt>The need</dt><dd>{project.need}</dd></div>
