@@ -92,11 +92,11 @@ export const tracks: Track[] = [
     eyebrow: "Applied AI / Workflows into working software",
     headline: "AI that ships into real workflows.",
     lede: "I turn operational workflows into working applications: a production MES, a multi-channel communications platform and a clinical documentation product, each built from system design through delivery.",
-    manifesto: "Verify before you act.",
+    manifesto: "AI that checks its own work.",
     pillars: [
-      { label: "Outcomes, not strings", text: "Check what actually happened in a conversation before creating the follow-up task." },
-      { label: "Bounded recovery", text: "Detect stalled work, limit retries and escalate to a person when the system should not guess." },
-      { label: "Humans approve", text: "AI drafts; people edit, review and approve. Review is part of the design, not an afterthought." },
+      { label: "Check before acting", text: "Confirm what actually happened on a call or in an email before the system creates a follow-up." },
+      { label: "Know when to stop", text: "When work stalls, retry a limited number of times, then hand it to a person instead of guessing." },
+      { label: "People approve", text: "AI writes the first draft. People edit, review and approve it before it counts." },
     ],
     flowTitle: "The agent loop",
     flow: [
@@ -106,10 +106,10 @@ export const tracks: Track[] = [
       { tag: "HUMAN", title: "Escalate", detail: "Review when confidence is low" },
     ],
     stats: [
-      { value: "3", label: "Systems designed and built end to end." },
-      { value: "6", label: "Data scientists built and managed at Expedia Group." },
+      { value: "In production", label: "The MES and ERP running Western Magnetics’ factory." },
+      { value: "2 AI products", label: "CoreLinq Communications and CoreLinq Scribe, built through Domain Labs." },
     ],
-    statNote: "MES at Western Magnetics, CoreLinq Communications, CoreLinq Scribe",
+    statNote: "Western Magnetics, 2026 to present / Domain Labs, 2025",
     work: ["corelinq", "mes", "scribe"],
     workEmphasis: {
       mes: [
@@ -156,10 +156,10 @@ export const tracks: Track[] = [
       { tag: "04", title: "Roll out", detail: "Software people use daily" },
     ],
     stats: [
-      { value: "3", label: "Products taken from problem to working software." },
-      { value: "15+", label: "Variables in the market segmentation behind acquisition priorities." },
+      { value: "Founder", label: "Built Domain Labs’ two AI products, from customer problem to working software." },
+      { value: "In production", label: "The MES and ERP running Western Magnetics’ factory." },
     ],
-    statNote: "Commercial analytics leadership at Expedia Group, 2019–2025",
+    statNote: "Domain Labs, 2025 / Western Magnetics, 2026 to present",
     work: ["scribe", "corelinq", "mes"],
     workEmphasis: {
       mes: [
@@ -193,13 +193,13 @@ export const tracks: Track[] = [
     lede: "I translate operational needs into software and help leaders use data to make decisions. Most recently: rolling out a production MES alongside the people who run the floor.",
     manifesto: "Adoption is the deliverable.",
     pillars: [
-      { label: "Work with the floor", text: "Built Western Magnetics' MES with production staff, from prototype through rollout." },
-      { label: "Connect the business", text: "Production, procurement, quality and traceability through shared workflows and operational data." },
+      { label: "Start with the people", text: "Learn how the work actually gets done from the people who do it, then build with them through rollout." },
+      { label: "Connect the teams", text: "Replace disconnected tools with shared workflows, so every team works from the same data." },
       { label: "Inform the executives", text: "Established an executive analytics function for commercial strategy and resource allocation." },
     ],
     flowTitle: "How change sticks",
     flow: [
-      { tag: "LISTEN", title: "Operators", detail: "Map how the work is done today" },
+      { tag: "LISTEN", title: "People", detail: "Map how the work is done today" },
       { tag: "BUILD", title: "Workflow", detail: "Software shaped to that work" },
       { tag: "ROLL", title: "Rollout", detail: "Harden with the people using it" },
       { tag: "INFORM", title: "Leaders", detail: "Data that changes decisions" },

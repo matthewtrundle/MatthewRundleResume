@@ -20,8 +20,8 @@ const products: Record<ProductKey, Product> = {
   corelinq: {
     org: "CoreLinq Communications",
     label: "Domain Labs",
-    title: "A conversation should lead somewhere.",
-    deck: "A multi-tenant communications platform for email, voice and SMS that connects outreach to follow-up, orders and fulfillment.",
+    title: "AI that handles a small business’s calls, texts and email.",
+    deck: "One platform for outreach and follow-up. AI agents make and answer calls, work the inbox and book appointments, then turn conversations into orders.",
     points: [
       "Verifies conversation outcomes before creating follow-up tasks.",
       "Detects stalled work, bounds retries and escalates to a person when needed.",
@@ -33,8 +33,8 @@ const products: Record<ProductKey, Product> = {
   scribe: {
     org: "CoreLinq Scribe",
     label: "Domain Labs",
-    title: "Less time charting. A better-prepared practice.",
-    deck: "A dental documentation product that turns patient encounters into structured notes and connects the schedule to inventory needs.",
+    title: "AI that writes the dentist’s chart notes.",
+    deck: "After a patient visit, Scribe drafts the clinical note and billing codes for the dentist to review and approve. It also tells the practice what supplies upcoming appointments need.",
     points: [
       "AI-drafted SOAP notes, ICD and CDT codes and procedural notes.",
       "Clinicians edit, review and approve the drafts; review is built into the workflow.",
@@ -60,8 +60,8 @@ function Flagship({ n, points, showMesDemo, showArchitecture }: FlagshipProps) {
       <div className="story-meta"><span>0{n} / Western Magnetics</span><span className="live"><i /> In production</span></div>
       <div className="flag-open">
         <div>
-          <h3>A factory’s operations, connected in software.</h3>
-          <p className="deck">I built and deployed the manufacturing execution system and ERP that run Western Magnetics’ production, quality, purchasing, inventory and shipping workflows.</p>
+          <h3>The software that runs Western Magnetics’ factory.</h3>
+          <p className="deck">I built the manufacturing execution system (MES) and ERP the company runs on: every build, quality check, purchase, inventory move and shipment goes through it.</p>
         </div>
         <aside className="outcome"><strong>MES + ERP</strong><p>Built from scratch and deployed. One system from receiving to shipment.</p></aside>
       </div>
