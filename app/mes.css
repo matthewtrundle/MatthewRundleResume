@@ -38,35 +38,9 @@
 .cloud-host-label { display:flex; align-items:center; gap:10px; margin-bottom:12px; color:#607e97; font:10px monospace; letter-spacing:.08em; }
 @media(max-width:700px) { .mes-architecture-group,.erp-cloud-group { padding:10px; } }
 
-/* Retro-window reskin: square corners, ink borders, mono labels. */
-.mes-showcase { background:transparent; border-top:0; padding:0; }
-.mes-intro h4,.architecture-intro h4 { font-family:var(--display); letter-spacing:-.045em; }
-.mes-app,.architecture-diagram { border-radius:0; border:2px solid var(--ink); box-shadow:inset 0 0 0 2px var(--win), inset 0 0 0 3px var(--ink); background:#fff; }
-.mes-sidebar { background:var(--win); border-right:2px solid var(--ink); }
-.mes-sidebar button { border-radius:0; color:var(--ink); font-family:var(--mono); }
-.mes-sidebar button:hover { background:#fff; }
-.mes-sidebar button[aria-pressed=true] { background:var(--ink); color:#fff; }
-.mes-toolbar { background:var(--ink); color:var(--win); font-family:var(--pixel); font-size:17px; padding:6px 14px; border:0; }
-.mes-toolbar>span>span { color:#888; }
-.mes-demo-label { border-color:#555; color:var(--win); border-radius:0; }
-.mes-title h5 { font-family:var(--display); }
-.mes-record-count,.mes-search,.mes-table-wrap,.mes-record,.mes-status { border-radius:0; }
-.mes-search { border:1px solid var(--ink); }
-.mes-table-wrap { border:1px solid var(--ink); }
-.mes-table-wrap th { background:var(--win); color:var(--ink); font-family:var(--mono); }
-.mes-table-wrap tr.selected { background:#f6dbe4; }
-.mes-table-wrap td button { color:var(--ink); }
-.mes-record { border:1px dashed var(--ink); }
-.mes-record-heading>span,.mes-title p,.level-tag,.floor-stations span { font-family:var(--mono); }
-.mes-app-footer { border-top:1px solid var(--ink); font-family:var(--mono); }
-.mes-caption { color:var(--ink-soft); font-family:var(--mono); }
-.architecture-layer,.factory-floor,.floor-stations>div,.operator-interface,.mes-architecture-group,.erp-cloud-group { border-radius:0; }
-.architecture-layer,.architecture-layer.execution,.architecture-layer.control { background:var(--win); border:1px solid var(--ink); }
-.architecture-layer p,.execution p,.execution .level-tag { color:var(--ink-soft); }
-.floor-stations>div { border:1px solid var(--ink); border-top:4px solid var(--ink); }
-.floor-stations svg,.operator-interface>svg { color:var(--ink); }
-.mes-architecture-group { background:#fff; border:1px solid var(--ink); }
-.erp-cloud-group { background:#fff; border:1px dashed var(--ink); }
-.design-principles article { border-top:2px solid var(--ink); }
-.design-principles p { color:var(--ink-soft); }
-.design-principles a { color:var(--ink); font-family:var(--mono); }
+/* Tie the demo to the page accent and type system. */
+.mes-intro h4,.architecture-intro h4,.mes-title h5,.architecture-layer h5 { font-family:var(--display); }
+.mes-sidebar button[aria-pressed=true] { background:var(--accent); }
+.mes-table-wrap tr.selected { background:color-mix(in srgb, var(--accent) 9%, #fff); }
+.mes-sidebar>p,.mes-title p,.mes-demo-label,.mes-record-heading>span,.level-tag,.floor-heading>span,.floor-stations span,.cloud-host-label { font-family:var(--mono) !important; }
+.flag-extra .mes-showcase,.flag-extra .architecture { background:transparent; border:0; padding:0; margin:0; }

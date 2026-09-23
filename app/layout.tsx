@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import { Inter_Tight, JetBrains_Mono, VT323 } from "next/font/google";
+import { Inter, Inter_Tight, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import "./mes.css";
+import Reveal from "@/components/site/Reveal";
 
-const display = Inter_Tight({ subsets: ["latin"], weight: ["400", "500"], variable: "--display" });
+const display = Inter_Tight({ subsets: ["latin"], weight: ["500", "600"], variable: "--display" });
+const body = Inter({ subsets: ["latin"], variable: "--body" });
 const mono = JetBrains_Mono({ subsets: ["latin"], weight: ["300", "400"], variable: "--mono" });
-const pixel = VT323({ subsets: ["latin"], weight: "400", variable: "--pixel" });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://matthew-rundle-resume.vercel.app"),
@@ -20,8 +21,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${display.variable} ${mono.variable} ${pixel.variable}`}>
-      <body>{children}</body>
+    <html lang="en" className={`${display.variable} ${body.variable} ${mono.variable}`}>
+      <body>{children}<Reveal /></body>
     </html>
   );
 }

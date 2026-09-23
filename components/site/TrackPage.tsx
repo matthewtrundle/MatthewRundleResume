@@ -1,9 +1,9 @@
 import Image from "next/image";
+import type { CSSProperties } from "react";
+import { ArrowDownRight, ArrowUpRight } from "lucide-react";
 import type { Track } from "@/lib/tracks";
-import { Nav, Footer, b64 } from "./Chrome";
-import Window from "./Window";
+import { Nav, Footer } from "./Chrome";
 import Work from "./Work";
-import { Clock, Glider } from "./DeskToys";
 
 const experience = [
   { years: "2026 — Present", company: "Western Magnetics", role: "Manufacturing systems and applied AI", text: "Built and deployed the MES and ERP running production, quality, purchasing, inventory and shipping." },
@@ -13,140 +13,128 @@ const experience = [
   { years: "2013 — 2019", company: "HomeAway · National Instruments · Advisory Board", role: "Analytics and consulting", text: "Global reporting, data analytics consulting and business analysis." },
 ];
 
-function Leadership() {
+function Experience({ resumeHref }: { resumeHref: string }) {
   return (
-    <section className="lead" id="experience" aria-labelledby="lead-title">
-      <div className="shell crop lead-grid">
-        <div>
-          <p className="eyebrow">Expedia Group / Vrbo · 2019–2025</p>
-          <h2 className="section-title" id="lead-title" style={{ marginTop: 18 }}>Data Is Useful When It Changes A Decision.</h2>
-          <ul>
-            <li><strong>Build the team.</strong> Built and managed six data scientists with shared Python and SQL standards.</li>
-            <li><strong>Understand the market.</strong> Segmentation across more than 15 variables to prioritize high-value property acquisition.</li>
-            <li><strong>Inform the executives.</strong> Integrated disparate data into executive reporting for strategy and resource allocation.</li>
-          </ul>
+    <section className="experience" id="experience" aria-labelledby="exp-title">
+      <div className="shell">
+        <div className="section-heading">
+          <div><p className="eyebrow">Experience</p><h2 id="exp-title">Build it. Lead it.<br />Understand the business.</h2></div>
+          <a className="btn ghost" href={resumeHref}>Full résumé <ArrowUpRight size={15} /></a>
         </div>
+        <article className="lead-card reveal">
+          <div>
+            <p className="eyebrow">Expedia Group / Vrbo · 2019–2025</p>
+            <h3>Data is useful when it changes a decision.</h3>
+          </div>
+          <div>
+            <p>I built and managed a team of six data scientists, working with executives on the commercial decisions behind a travel business.</p>
+            <ul>
+              <li><strong>Build the team.</strong> Shared Python and SQL standards for analytics work.</li>
+              <li><strong>Understand the market.</strong> Segmentation across more than 15 variables to prioritize high-value property acquisition.</li>
+              <li><strong>Inform the executives.</strong> Integrated disparate data into executive reporting for strategy and resource allocation.</li>
+            </ul>
+          </div>
+        </article>
         <div className="timeline">
           {experience.map(item => (
             <article key={item.role}>
               <p className="years">{item.years}</p>
-              <div><h3>{item.company}</h3><h4>{item.role}</h4><p>{item.text}</p></div>
+              <div><h3>{item.company}</h3><h4>{item.role}</h4></div>
+              <p>{item.text}</p>
             </article>
           ))}
         </div>
-        <span className="crop-b" />
       </div>
     </section>
   );
 }
 
 export default function TrackPage({ track }: { track: Track }) {
-  const sections = [{ href: "#work", label: "Work" }, { href: "#experience", label: "Experience" }, { href: "#faq", label: "FAQ" }];
+  const sections = [{ href: "#approach", label: "Approach" }, { href: "#work", label: "Work" }, { href: "#experience", label: "Experience" }, { href: "#faq", label: "FAQ" }];
+  const style = { "--accent": track.accent } as CSSProperties;
+  const roleLabel = track.short.toLowerCase().replace("ai", "AI");
   return (
-    <div className={`band-${track.band}`}>
+    <div style={style}>
       <a className="skip-link" href="#main">Skip to content</a>
-      <Nav current={track.slug} resumeHref={track.resumePdf} sections={sections} />
+      <Nav current={track} resumeHref={track.resumePdf} sections={sections} />
       <main id="main">
-        <header className="hero">
-          <div className="sky" aria-hidden="true" />
-          <div className="hero-windows">
-            <Window title={<>Sept 2026 • Now Open</>}>
-              <p>OPEN TO {track.short.toUpperCase()} ROLES</p>
-              <p>Based in Austin, Texas</p>
-              <a className="pixel-btn" href={track.resumePdf}>Download résumé</a>
-            </Window>
-            <Window title={<>Résumé version • {track.short}</>}>
-              <p>{track.title}</p>
-              <a href="#work">Read the work</a>
-            </Window>
-          </div>
-          <div className="shell crop hero-title">
-            <p className="vertical-code" aria-hidden="true">{b64(`matthew rundle / ${track.slug} / austin tx`)}</p>
-            <p className="kicker">{track.kicker}</p>
-            <h1 className="display">{track.headline}</h1>
-            <p className="hero-lede">{track.lede}</p>
-            <div className="big-links">
-              <a href="#work">See The Work</a>
-              <a href="mailto:matthewtrundle@gmail.com">Get In Touch</a>
+        <div className="hero-wrap">
+          <section className="hero shell" aria-labelledby="hero-title">
+            <div>
+              <p className="eyebrow rise">{track.eyebrow}</p>
+              <h1 id="hero-title" className="rise d1">{track.headline}</h1>
+              <p className="hero-lede rise d2">{track.lede}</p>
+              <div className="hero-actions rise d3">
+                <a className="btn dark" href="#work">See the work <ArrowDownRight size={16} /></a>
+                <a className="btn ghost" href={track.resumePdf}>Download résumé <ArrowUpRight size={15} /></a>
+              </div>
+              <p className="availability rise d4"><span /> Austin, Texas · Open to {roleLabel} roles</p>
             </div>
-            <span className="crop-b" />
-          </div>
-        </header>
-
-        <section className="band" aria-labelledby="manifesto-title">
-          <div className="shell" style={{ paddingTop: 40 }}>
-            <div className="desktop">
-              <span className="desk-label">MR.{track.slug.toUpperCase()}.OS</span>
-              <div className="desk-grid">
-                <div className="flow" aria-label={track.flowTitle}>
-                  {track.flow.map((step, i) => (
-                    <Window key={step.tag} title={`${track.flowTitle} / 0${i + 1}`}>
-                      <span className="tag">{step.tag}</span><strong>{step.title}</strong>
-                      <small>{step.detail}</small>
-                    </Window>
-                  ))}
-                </div>
-                <div className="desk-side">
-                  <Window title="Portrait.jpg" className="portrait">
-                    <Image src="/images/headshot.jpeg" alt="Matthew Rundle" width={800} height={800} sizes="(max-width: 1000px) 45vw, 300px" preload />
-                  </Window>
-                  <Clock />
-                  <Glider />
-                </div>
+            <figure className="portrait rise d2">
+              <Image src="/images/headshot.jpeg" alt="Matthew Rundle" width={800} height={800} sizes="(max-width: 700px) 90vw, 420px" preload />
+              <figcaption>
+                <div><strong>Matthew Rundle</strong><span>Builder. Team leader. Hands-on.</span></div>
+                <em>{track.short}</em>
+              </figcaption>
+            </figure>
+          </section>
+          <div className="shell">
+            <div className="facts">
+              {track.stats.map(s => <div key={s.label}><strong>{s.value}</strong><p>{s.label}</p></div>)}
+              <div className="resume-card">
+                <div><p className="eyebrow">This résumé</p><h3 style={{ marginTop: 10 }}>{track.title}</h3></div>
+                <a className="btn ghost" href={track.resumePdf} style={{ alignSelf: "start" }}>Download PDF <ArrowUpRight size={15} /></a>
               </div>
             </div>
+            <p className="fact-note">{track.statNote}</p>
           </div>
-          <div className="shell crop manifesto">
-            <h2 className="display" id="manifesto-title">{track.manifesto}</h2>
-            <span className="crop-b" />
-          </div>
-          <div className="shell pillars">
-            {track.pillars.map(p => (
-              <article key={p.label}><h3>{p.label}</h3><p>{p.text}</p></article>
-            ))}
-            <div aria-hidden="true"><p className="mono" style={{ fontSize: 10, marginBottom: 8 }}>[B.64]</p><p className="b64">{b64(`${track.title}. ${track.lede}`)}</p></div>
-          </div>
-          <div className="shell crop" aria-label="Key facts">
-            <div className="stats">
-              {track.stats.map(s => <div className="stat" key={s.label}><strong>{s.value}</strong><p>{s.label}</p></div>)}
+        </div>
+
+        <section className="approach" id="approach" aria-labelledby="approach-title">
+          <div className="shell">
+            <div className="approach-grid">
+              <div><p className="eyebrow">How I work</p><h2 id="approach-title">{track.manifesto}</h2></div>
+              <div className="pillars">
+                {track.pillars.map((p, i) => <article key={p.label} className="reveal"><span>0{i + 1}</span><div><h3>{p.label}</h3><p>{p.text}</p></div></article>)}
+              </div>
             </div>
-            <p className="stat-note">{track.statNote}</p>
-            <span className="crop-b" />
+            <div className="flow reveal">
+              <p className="eyebrow">{track.flowTitle}</p>
+              <ol>
+                {track.flow.map(step => <li key={step.tag}><b>{step.tag}</b><strong>{step.title}</strong><small>{step.detail}</small></li>)}
+              </ol>
+            </div>
           </div>
-          <div style={{ height: 40 }} />
         </section>
 
-        {track.leadFirst && <Leadership />}
+        {track.leadFirst && <Experience resumeHref={track.resumePdf} />}
         <Work order={track.work} emphasis={track.workEmphasis} showMesDemo={track.showMesDemo} showArchitecture={track.showArchitecture} />
-        {!track.leadFirst && <Leadership />}
+        {!track.leadFirst && <Experience resumeHref={track.resumePdf} />}
 
-        <section className="shell crop" aria-labelledby="skills-title">
-          <h2 className="section-title" id="skills-title" style={{ marginBottom: 32 }}>Toolkit.</h2>
-          <div className="skills">
-            {track.skills.map(s => <Window key={s.label} title={s.label}><p>{s.text}</p></Window>)}
+        <section className="toolkit" aria-labelledby="skills-title">
+          <div className="shell">
+            <p className="eyebrow" id="skills-title">Toolkit</p>
+            <div className="skills">
+              {track.skills.map(s => <article key={s.label} className="reveal"><h3>{s.label}</h3><p>{s.text}</p></article>)}
+            </div>
           </div>
-          <span className="crop-b" />
         </section>
 
-        <section className="dark" id="faq" aria-labelledby="faq-title">
-          <div className="shell crop">
-            <h2 className="section-title" id="faq-title" style={{ textAlign: "center", marginBottom: 56 }}>Fair Questions</h2>
+        <section className="faq-section" id="faq" aria-labelledby="faq-title">
+          <div className="shell faq-grid">
+            <div><p className="eyebrow">Fair questions</p><h2 id="faq-title">What people<br />usually ask.</h2></div>
             <div className="faq">
-              <div>
-                {track.faq.map((f, i) => (
-                  <details key={f.q} open={i === 0}>
-                    <summary>{f.q}</summary>
-                    <p>{f.a}</p>
-                  </details>
-                ))}
-              </div>
-              <div className="faq-side" aria-hidden="true"><p className="mono" style={{ fontSize: 10, marginBottom: 8 }}>[B.64]</p><p className="b64">{b64(track.faq.map(f => f.q).join(" "))}</p></div>
+              {track.faq.map((f, i) => (
+                <details key={f.q} open={i === 0}>
+                  <summary>{f.q}</summary>
+                  <p>{f.a}</p>
+                </details>
+              ))}
             </div>
-            <span className="crop-b" />
           </div>
         </section>
       </main>
-      <Footer />
+      <Footer current={track} />
     </div>
   );
 }

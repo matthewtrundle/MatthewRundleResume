@@ -1,65 +1,52 @@
+import Image from "next/image";
 import Link from "next/link";
-import { Nav, Footer, b64 } from "@/components/site/Chrome";
-import Window from "@/components/site/Window";
-import { Clock } from "@/components/site/DeskToys";
+import type { CSSProperties } from "react";
+import { ArrowDownRight, ArrowUpRight } from "lucide-react";
+import { Nav, Footer } from "@/components/site/Chrome";
 import { tracks } from "@/lib/tracks";
-
-const swatch: Record<string, string> = { pink: "var(--pink)", sage: "var(--sage)", lilac: "var(--lilac)", sky: "#a9d3f2", stone: "var(--stone)" };
 
 export default function Home() {
   return (
-    <div className="band-pink">
+    <>
       <a className="skip-link" href="#main">Skip to content</a>
-      <Nav resumeHref="/Matthew_Rundle_Resume.pdf" sections={[]} />
+      <Nav resumeHref="/Matthew_Rundle_Resume.pdf" sections={[{ href: "#tracks", label: "Résumé versions" }, { href: "#contact", label: "Contact" }]} />
       <main id="main">
-        <header className="hero">
-          <div className="sky" aria-hidden="true" />
-          <div className="hero-windows">
-            <Window title="Sept 2026 • Matthew Rundle">
-              <p>FIVE RÉSUMÉS. ONE BUILDER.</p>
-              <p>Pick the track that fits the role.</p>
-              <a className="pixel-btn" href="#tracks">Choose a track</a>
-            </Window>
-            <Clock />
-          </div>
-          <div className="shell crop hero-title">
-            <p className="vertical-code" aria-hidden="true">{b64("matthew rundle / austin tx / builder")}</p>
-            <p className="kicker">Matthew Rundle ........................ Austin, Texas</p>
-            <h1 className="display">Software That Gets Used</h1>
-            <p className="hero-lede">I built the MES running Western Magnetics&apos; production, shipped agentic SaaS through Domain Labs, and led a team of six data scientists at Expedia Group.</p>
-            <div className="big-links">
-              <a href="#tracks">Pick A Track</a>
-              <a href="mailto:matthewtrundle@gmail.com">Get In Touch</a>
-            </div>
-            <span className="crop-b" />
-          </div>
-        </header>
-        <section className="band" id="tracks" aria-labelledby="tracks-title">
-          <div className="shell crop manifesto">
-            <h2 className="display" id="tracks-title">Five Tracks</h2>
-            <span className="crop-b" />
-          </div>
-          <div className="shell" style={{ paddingBottom: 80 }}>
-            <div className="desktop">
-              <span className="desk-label">MR.TRACKS.OS</span>
-              <div className="track-grid">
-                {tracks.map((t, i) => (
-                  <Link key={t.slug} href={`/${t.slug}`} className="win">
-                    <div className="win-bar"><span>0{i + 1} / {t.short}</span><span>Open</span></div>
-                    <div className="win-body">
-                      <div className="swatch" style={{ background: swatch[t.band] }} />
-                      <h3>{t.headline}</h3>
-                      <p>{t.title}</p>
-                      <span className="open">Open track →</span>
-                    </div>
-                  </Link>
-                ))}
+        <div className="hero-wrap">
+          <section className="hero shell" aria-labelledby="hero-title">
+            <div>
+              <p className="eyebrow rise">Matthew Rundle / Austin, Texas</p>
+              <h1 id="hero-title" className="rise d1">Software that gets used.</h1>
+              <p className="hero-lede rise d2">I built the MES running Western Magnetics’ production, shipped agentic SaaS through Domain Labs, and led a team of six data scientists at Expedia Group.</p>
+              <div className="hero-actions rise d3">
+                <a className="btn dark" href="#tracks">Choose a version <ArrowDownRight size={16} /></a>
+                <a className="btn ghost" href="mailto:matthewtrundle@gmail.com">Get in touch <ArrowUpRight size={15} /></a>
               </div>
+              <p className="availability rise d4"><span /> Austin, Texas · Open to applied AI, manufacturing and data leadership roles</p>
             </div>
+            <figure className="portrait rise d2">
+              <Image src="/images/headshot.jpeg" alt="Matthew Rundle" width={800} height={800} sizes="(max-width: 700px) 90vw, 420px" preload />
+              <figcaption><div><strong>Matthew Rundle</strong><span>Builder. Team leader. Hands-on.</span></div></figcaption>
+            </figure>
+          </section>
+        </div>
+        <section className="tracks-section shell" id="tracks" aria-labelledby="tracks-title">
+          <div className="section-heading">
+            <div><p className="eyebrow">Five résumé versions</p><h2 id="tracks-title">Pick the version<br />that fits the role.</h2></div>
+            <p>Same history, same evidence. Each version leads with the work most relevant to that kind of role.</p>
+          </div>
+          <div className="track-cards">
+            {tracks.map((t, i) => (
+              <Link key={t.slug} href={`/${t.slug}`} className="track-card reveal" style={{ "--c": t.accent } as CSSProperties}>
+                <p className="eyebrow">0{i + 1} / {t.short}</p>
+                <h3>{t.headline}</h3>
+                <p>{t.title}</p>
+                <span>Open this version <ArrowUpRight size={16} /></span>
+              </Link>
+            ))}
           </div>
         </section>
       </main>
       <Footer />
-    </div>
+    </>
   );
 }

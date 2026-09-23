@@ -2,7 +2,6 @@
 // the only numbers allowed are the team of six, "more than 15 variables", and dates.
 
 export type WorkKey = "mes" | "corelinq" | "scribe";
-export type Band = "pink" | "sage" | "lilac" | "sky" | "stone";
 
 export type Stat = { value: string; label: string };
 export type Pillar = { label: string; text: string };
@@ -14,8 +13,8 @@ export type Track = {
   short: string;
   title: string;
   resumePdf: string;
-  band: Band;
-  kicker: string;
+  accent: string;
+  eyebrow: string;
   headline: string;
   lede: string;
   manifesto: string;
@@ -39,17 +38,17 @@ export const tracks: Track[] = [
     short: "Manufacturing",
     title: "Manufacturing Software and Applied AI",
     resumePdf: "/resumes/Matthew_Rundle_Manufacturing_Software.pdf",
-    band: "sage",
-    kicker: "MES / ERP ........................ Software that runs the floor",
-    headline: "Software That Runs The Factory Floor",
+    accent: "#315e51",
+    eyebrow: "MES / ERP / Software that runs the floor",
+    headline: "Software that runs the factory floor.",
     lede: "I built and deployed the MES and ERP running Western Magnetics' production, quality and supply workflows, working with production staff from first prototype through rollout.",
-    manifesto: "Built Around How The Work Happens",
+    manifesto: "Built around how the work happens.",
     pillars: [
-      { label: "Work Orders, Not Spreadsheets", text: "Work-order, routing and station workflows with role-based operator interfaces." },
-      { label: "Equipment In The Loop", text: "Interfaces that carry live machine signals into the MES, alongside the mechatronics engineers who built the controllers." },
-      { label: "Traceable By Default", text: "An event stream records production state changes, from incoming inspection to shipment." },
+      { label: "Work orders, not spreadsheets", text: "Work-order, routing and station workflows with role-based operator interfaces." },
+      { label: "Equipment in the loop", text: "Interfaces that carry live machine signals into the MES, alongside the mechatronics engineers who built the controllers." },
+      { label: "Traceable by default", text: "An event stream records production state changes, from incoming inspection to shipment." },
     ],
-    flowTitle: "Floor.To.Business",
+    flowTitle: "From the floor to the business",
     flow: [
       { tag: "FLOOR", title: "Factory devices", detail: "Machines, controllers and test stations" },
       { tag: "EDGE", title: "Edge device", detail: "Carries machine signals into the MES" },
@@ -57,10 +56,10 @@ export const tracks: Track[] = [
       { tag: "ERP", title: "Business", detail: "Purchasing, inventory, shipping" },
     ],
     stats: [
-      { value: "MES+ERP", label: "Built and deployed at Western Magnetics." },
-      { value: "Lot→Ship", label: "Incoming inspection, lots, FIFO, BOM consumption and kitting." },
+      { value: "MES + ERP", label: "Built from scratch and deployed at Western Magnetics." },
+      { value: "End to end", label: "Production, quality, purchasing, inventory and shipping in one system." },
     ],
-    statNote: "*Production, quality, purchasing, inventory and shipping in one system",
+    statNote: "Western Magnetics, 2026 to present",
     work: ["mes", "corelinq", "scribe"],
     workEmphasis: {
       mes: [
@@ -89,17 +88,17 @@ export const tracks: Track[] = [
     short: "Applied AI",
     title: "Applied AI and Solutions Engineering",
     resumePdf: "/resumes/Matthew_Rundle_Applied_AI_Solutions.pdf",
-    band: "pink",
-    kicker: "Applied AI ........................ Workflows into working software",
-    headline: "AI That Ships Into Real Workflows",
+    accent: "#35598a",
+    eyebrow: "Applied AI / Workflows into working software",
+    headline: "AI that ships into real workflows.",
     lede: "I turn operational workflows into working applications: a production MES, a multi-channel communications platform and a clinical documentation product, each built from system design through delivery.",
-    manifesto: "Verify Before You Act",
+    manifesto: "Verify before you act.",
     pillars: [
-      { label: "Outcomes, Not Strings", text: "Check what actually happened in a conversation before creating the follow-up task." },
-      { label: "Bounded Recovery", text: "Detect stalled work, limit retries and escalate to a person when the system should not guess." },
-      { label: "Humans Approve", text: "AI drafts; people edit, review and approve. Review is part of the design, not an afterthought." },
+      { label: "Outcomes, not strings", text: "Check what actually happened in a conversation before creating the follow-up task." },
+      { label: "Bounded recovery", text: "Detect stalled work, limit retries and escalate to a person when the system should not guess." },
+      { label: "Humans approve", text: "AI drafts; people edit, review and approve. Review is part of the design, not an afterthought." },
     ],
-    flowTitle: "Agent.Loop",
+    flowTitle: "The agent loop",
     flow: [
       { tag: "IN", title: "Event", detail: "Email, SMS, voice, test result" },
       { tag: "AGENT", title: "Orchestrate", detail: "Plan the next action" },
@@ -110,7 +109,7 @@ export const tracks: Track[] = [
       { value: "3", label: "Systems designed and built end to end." },
       { value: "6", label: "Data scientists built and managed at Expedia Group." },
     ],
-    statNote: "*MES at Western Magnetics, CoreLinq Communications, CoreLinq Scribe",
+    statNote: "MES at Western Magnetics, CoreLinq Communications, CoreLinq Scribe",
     work: ["corelinq", "mes", "scribe"],
     workEmphasis: {
       mes: [
@@ -139,17 +138,17 @@ export const tracks: Track[] = [
     short: "AI Product",
     title: "AI Product and Software Delivery",
     resumePdf: "/resumes/Matthew_Rundle_AI_Product_Delivery.pdf",
-    band: "lilac",
-    kicker: "Product ........................ From customer workflow to shipped",
-    headline: "Products Built Around The Work",
+    accent: "#76477a",
+    eyebrow: "Product / From customer workflow to shipped",
+    headline: "Products built around the work.",
     lede: "I build products by starting with the customer's workflow: a factory's production process, a sales team's follow-up, a dental practice's charting. Then I stay involved through delivery.",
-    manifesto: "Start With The Workflow",
+    manifesto: "Start with the workflow.",
     pillars: [
-      { label: "Sit With The Users", text: "Production staff, small-business owners and clinicians shaped each product from the first prototype." },
-      { label: "Design The Handoffs", text: "Drafts, reviews, approvals and escalations are product decisions, not edge cases." },
-      { label: "Own The Delivery", text: "System design, data model and APIs through rollout, not a spec thrown over the wall." },
+      { label: "Sit with the users", text: "Production staff, small-business owners and clinicians shaped each product from the first prototype." },
+      { label: "Design the handoffs", text: "Drafts, reviews, approvals and escalations are product decisions, not edge cases." },
+      { label: "Own the delivery", text: "System design, data model and APIs through rollout, not a spec thrown over the wall." },
     ],
-    flowTitle: "Product.Loop",
+    flowTitle: "How a product gets built",
     flow: [
       { tag: "01", title: "Workflow", detail: "How the work actually happens" },
       { tag: "02", title: "Prototype", detail: "Put something real in front of users" },
@@ -160,7 +159,7 @@ export const tracks: Track[] = [
       { value: "3", label: "Products taken from problem to working software." },
       { value: "15+", label: "Variables in the market segmentation behind acquisition priorities." },
     ],
-    statNote: "*Commercial analytics leadership at Expedia Group, 2019–2025",
+    statNote: "Commercial analytics leadership at Expedia Group, 2019–2025",
     work: ["scribe", "corelinq", "mes"],
     workEmphasis: {
       mes: [
@@ -188,17 +187,17 @@ export const tracks: Track[] = [
     short: "AI Transformation",
     title: "Applied AI and Operational Transformation",
     resumePdf: "/resumes/Matthew_Rundle_AI_Transformation.pdf",
-    band: "sky",
-    kicker: "Operations ........................ AI where it earns its place",
-    headline: "Operational AI, Adopted By People",
+    accent: "#8a5626",
+    eyebrow: "Operations / AI where it earns its place",
+    headline: "Operational AI, adopted by people.",
     lede: "I translate operational needs into software and help leaders use data to make decisions. Most recently: rolling out a production MES alongside the people who run the floor.",
-    manifesto: "Adoption Is The Deliverable",
+    manifesto: "Adoption is the deliverable.",
     pillars: [
-      { label: "Work With The Floor", text: "Built Western Magnetics' MES with production staff, from prototype through rollout." },
-      { label: "Connect The Business", text: "Production, procurement, quality and traceability through shared workflows and operational data." },
-      { label: "Inform The Executives", text: "Established an executive analytics function for commercial strategy and resource allocation." },
+      { label: "Work with the floor", text: "Built Western Magnetics' MES with production staff, from prototype through rollout." },
+      { label: "Connect the business", text: "Production, procurement, quality and traceability through shared workflows and operational data." },
+      { label: "Inform the executives", text: "Established an executive analytics function for commercial strategy and resource allocation." },
     ],
-    flowTitle: "Change.Loop",
+    flowTitle: "How change sticks",
     flow: [
       { tag: "LISTEN", title: "Operators", detail: "Map how the work is done today" },
       { tag: "BUILD", title: "Workflow", detail: "Software shaped to that work" },
@@ -209,7 +208,7 @@ export const tracks: Track[] = [
       { value: "6", label: "Data scientists built and managed at Expedia Group." },
       { value: "12+", label: "Years across analytics, team leadership and software delivery." },
     ],
-    statNote: "*Expedia Group / Vrbo, National Instruments, The Advisory Board Company",
+    statNote: "Expedia Group / Vrbo, National Instruments, The Advisory Board Company",
     work: ["mes", "corelinq", "scribe"],
     workEmphasis: {
       mes: [
@@ -238,17 +237,17 @@ export const tracks: Track[] = [
     short: "Data Leadership",
     title: "Data and Analytics Leadership",
     resumePdf: "/resumes/Matthew_Rundle_Data_Analytics_Leadership.pdf",
-    band: "stone",
-    kicker: "Data ........................ Useful when it changes a decision",
-    headline: "Data That Changes A Decision",
+    accent: "#1f6070",
+    eyebrow: "Data / Useful when it changes a decision",
+    headline: "Data that changes a decision.",
     lede: "I built and managed a team of six data scientists at Expedia Group and established the executive reporting behind market prioritization and resource allocation. Now I build the software, too.",
-    manifesto: "Build The Team. Inform The Call.",
+    manifesto: "Build the team. Inform the call.",
     pillars: [
-      { label: "Build The Team", text: "Built and managed six data scientists with shared Python and SQL standards." },
-      { label: "Focus The Effort", text: "Segmentation across more than 15 variables to prioritize high-value property acquisition." },
-      { label: "Inform Executives", text: "An executive analytics function for commercial strategy and resource allocation." },
+      { label: "Build the team", text: "Built and managed six data scientists with shared Python and SQL standards." },
+      { label: "Focus the effort", text: "Segmentation across more than 15 variables to prioritize high-value property acquisition." },
+      { label: "Inform executives", text: "An executive analytics function for commercial strategy and resource allocation." },
     ],
-    flowTitle: "Decision.Pipeline",
+    flowTitle: "From data to decision",
     flow: [
       { tag: "SRC", title: "Sources", detail: "Disparate commercial data" },
       { tag: "MODEL", title: "Segment", detail: "15+ variables, prioritized" },
@@ -259,7 +258,7 @@ export const tracks: Track[] = [
       { value: "6", label: "Data scientists built and managed." },
       { value: "15+", label: "Variables in the acquisition segmentation." },
     ],
-    statNote: "*Expedia Group / Vrbo, Supply and Commercial Data Science, 2019–2025",
+    statNote: "Expedia Group / Vrbo, Supply and Commercial Data Science, 2019–2025",
     work: ["mes", "corelinq", "scribe"],
     workEmphasis: {},
     showMesDemo: false,

@@ -1,38 +1,26 @@
 import Image from "next/image";
+import { ArrowUpRight } from "lucide-react";
 import type { WorkKey } from "@/lib/tracks";
-import Window from "./Window";
 import MESPreview, { ManufacturingArchitecture } from "@/app/mes-preview";
 
-type Story = {
+type ProductKey = Exclude<WorkKey, "mes">;
+
+type Product = {
   org: string;
-  status: string;
-  live?: boolean;
+  label: string;
   title: string;
   deck: string;
   points: string[];
   tech: string;
   link?: { href: string; label: string };
-  shot?: { src: string; alt: string; width: number; height: number; caption: string; bar: string; tall?: boolean };
+  shot: { src: string; alt: string; width: number; height: number; caption: string; bar: string; tall?: boolean };
 };
 
-const stories: Record<WorkKey, Story> = {
-  mes: {
-    org: "Western Magnetics",
-    status: "In production",
-    live: true,
-    title: "A Factory's Operations, Connected In Software",
-    deck: "I built and deployed the manufacturing execution system and ERP that run Western Magnetics' production, quality, purchasing, inventory and shipping workflows.",
-    points: [
-      "Worked directly with production staff from initial prototype through integration, hardening and rollout.",
-      "Built interfaces carrying live machine signals into the MES, alongside the mechatronics engineers who built the controllers.",
-      "Work-order, routing and station workflows with role-based operator interfaces and an event stream of production state changes.",
-    ],
-    tech: "Next.js · TypeScript · PostgreSQL · Prisma · Docker",
-  },
+const products: Record<ProductKey, Product> = {
   corelinq: {
     org: "CoreLinq Communications",
-    status: "Domain Labs",
-    title: "A Conversation Should Lead Somewhere",
+    label: "Domain Labs",
+    title: "A conversation should lead somewhere.",
     deck: "A multi-tenant communications platform for email, voice and SMS that connects outreach to follow-up, orders and fulfillment.",
     points: [
       "Verifies conversation outcomes before creating follow-up tasks.",
@@ -44,8 +32,8 @@ const stories: Record<WorkKey, Story> = {
   },
   scribe: {
     org: "CoreLinq Scribe",
-    status: "Domain Labs",
-    title: "Less Time Charting. A Better-Prepared Practice.",
+    label: "Domain Labs",
+    title: "Less time charting. A better-prepared practice.",
     deck: "A dental documentation product that turns patient encounters into structured notes and connects the schedule to inventory needs.",
     points: [
       "AI-drafted SOAP notes, ICD and CDT codes and procedural notes.",
@@ -53,61 +41,81 @@ const stories: Record<WorkKey, Story> = {
       "Connects upcoming appointments to inventory and practice operations.",
     ],
     tech: "Next.js · React · Supabase · Anthropic · OpenAI",
-    link: { href: "https://scribe-two-tau.vercel.app/demo", label: "Explore the populated demo ↗" },
+    link: { href: "https://scribe-two-tau.vercel.app/demo", label: "Explore the populated demo" },
     shot: { src: "/images/products/scribe-dashboard.png", alt: "CoreLinq Scribe development screenshot showing the demo practice dashboard", width: 1343, height: 1900, caption: "Development screenshot · demo practice", bar: "Scribe / Practice", tall: true },
   },
 };
 
+const mesDefault = [
+  "Worked directly with production staff from initial prototype through integration, hardening and rollout.",
+  "Built interfaces carrying live machine signals into the MES, alongside the mechatronics engineers who built the controllers.",
+  "Designed work-order, routing and station workflows with role-based operator interfaces and an event stream of production state changes.",
+];
+
+type FlagshipProps = { n: number; points: string[]; showMesDemo: boolean; showArchitecture: boolean };
+
+function Flagship({ n, points, showMesDemo, showArchitecture }: FlagshipProps) {
+  return (
+    <article className="card flagship reveal" id="mes">
+      <div className="story-meta"><span>0{n} / Western Magnetics</span><span className="live"><i /> In production</span></div>
+      <div className="flag-open">
+        <div>
+          <h3>A factory’s operations, connected in software.</h3>
+          <p className="deck">I built and deployed the manufacturing execution system and ERP that run Western Magnetics’ production, quality, purchasing, inventory and shipping workflows.</p>
+        </div>
+        <aside className="outcome"><strong>MES + ERP</strong><p>Built from scratch and deployed. One system from receiving to shipment.</p></aside>
+      </div>
+      <div className="flag-body">
+        <div className="setting">
+          <p className="eyebrow">The setting</p>
+          <p>A hard-tech startup that needed software built around the factory’s real operating needs, with the people doing the work.</p>
+          <p className="tech">Next.js · TypeScript · PostgreSQL · Prisma · Docker</p>
+        </div>
+        <div className="contribs">
+          {points.map((p, i) => <div key={p}><span>0{i + 1}</span><p>{p}</p></div>)}
+        </div>
+      </div>
+      {showMesDemo && <div className="flag-extra"><MESPreview /></div>}
+      {showArchitecture && <div className="flag-extra"><ManufacturingArchitecture /></div>}
+    </article>
+  );
+}
+
+function ProductCard({ n, p, flip }: { n: number; p: Product; flip: boolean }) {
+  return (
+    <article className={`card product reveal${flip ? " flip" : ""}`}>
+      <div className="product-copy">
+        <div className="story-meta"><span>0{n} / {p.org}</span><span>{p.label}</span></div>
+        <h3>{p.title}</h3>
+        <p className="deck">{p.deck}</p>
+        <ul>{p.points.map(pt => <li key={pt}>{pt}</li>)}</ul>
+        {p.link && <a className="demo-link" href={p.link.href} target="_blank" rel="noreferrer">{p.link.label} <ArrowUpRight size={15} /></a>}
+        <p className="tech">{p.tech}</p>
+      </div>
+      <figure className={`shot${p.shot.tall ? " tall" : ""}`}>
+        <div className="shot-bar"><i aria-hidden="true" /><span>{p.shot.bar}</span></div>
+        <Image src={p.shot.src} alt={p.shot.alt} width={p.shot.width} height={p.shot.height} sizes="(max-width: 1000px) 92vw, 560px" />
+        <figcaption>{p.shot.caption}</figcaption>
+      </figure>
+    </article>
+  );
+}
+
 type WorkProps = { order: WorkKey[]; emphasis: Partial<Record<WorkKey, string[]>>; showMesDemo: boolean; showArchitecture: boolean };
 
 export default function Work({ order, emphasis, showMesDemo, showArchitecture }: WorkProps) {
+  const productOrder = order.filter((k): k is ProductKey => k !== "mes");
   return (
-    <section className="shell crop" id="work" aria-labelledby="work-title">
-      <div className="work-head">
-        <h2 className="section-title" id="work-title">Built To Be Used.</h2>
-        <p className="mono" style={{ fontSize: 11 }}>SELECTED WORK / 0{order.length}</p>
+    <section className="work" id="work" aria-labelledby="work-title">
+      <div className="shell">
+        <div className="section-heading">
+          <div><p className="eyebrow">Selected work / 01—03</p><h2 id="work-title">Built to be used.</h2></div>
+          <p>Three systems, three different businesses. Ownership from the problem through production.</p>
+        </div>
+        {order.map((key, i) => key === "mes"
+          ? <Flagship key={key} n={i + 1} points={emphasis.mes ?? mesDefault} showMesDemo={showMesDemo} showArchitecture={showArchitecture} />
+          : <ProductCard key={key} n={i + 1} p={products[key]} flip={productOrder.indexOf(key) % 2 === 1} />)}
       </div>
-      {order.map((key, i) => {
-        const s = stories[key];
-        const points = emphasis[key] ?? s.points;
-        const isMes = key === "mes";
-        return (
-          <div key={key} className="story-wrap">
-            <article className="story">
-              <div className="story-copy">
-                <div className="story-meta">
-                  <span className="chip">0{i + 1} / {s.org}</span>
-                  <span className={`chip${s.live ? " hot" : ""}`}>{s.status}</span>
-                </div>
-                <h3>{s.title}</h3>
-                <p className="deck">{s.deck}</p>
-                <ul>{points.map(p => <li key={p}>{p}</li>)}</ul>
-                {s.link && <a className="story-link" href={s.link.href} target="_blank" rel="noreferrer">{s.link.label}</a>}
-                <p className="tech">{s.tech}</p>
-              </div>
-              {s.shot ? (
-                <figure className={`story-shot${s.shot.tall ? " tall" : ""}`} style={{ margin: 0 }}>
-                  <Window title={s.shot.bar} aside="Product view">
-                    <Image src={s.shot.src} alt={s.shot.alt} width={s.shot.width} height={s.shot.height} sizes="(max-width: 1000px) 92vw, 600px" />
-                  </Window>
-                  <figcaption>{s.shot.caption}</figcaption>
-                </figure>
-              ) : (
-                <Window title="Westmag.MES" aside="Scope" className="scope">
-                  <p>Production · Quality · Purchasing</p>
-                  <p>Inventory · Shipping</p>
-                  <p style={{ marginTop: 14 }}>Work orders → Routings → Stations</p>
-                  <p>Lots · FIFO · BOM consumption · Kitting</p>
-                  <p style={{ marginTop: 14 }}>NCRs · Per-unit tests · Event stream</p>
-                </Window>
-              )}
-            </article>
-            {isMes && showMesDemo && <div className="demo-wrap"><MESPreview /></div>}
-            {isMes && showArchitecture && <div className="demo-wrap"><ManufacturingArchitecture /></div>}
-          </div>
-        );
-      })}
-      <span className="crop-b" />
     </section>
   );
 }
